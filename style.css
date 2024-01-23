@@ -1,0 +1,411 @@
+/*************Table of Content *********
+* Name = Krishna Paul                   *
+* CodSoft Web Developement Intern       *
+* Task 1 | Landing Page                 *
+*****************************************
+* 1. Main Cover Div                     *
+* 2. About Us                           *
+* 3. Services Section                   *
+* 4. Footer                             *
+* 5. Responsiveness                     *
+* 6. Social Icons                       *
+*****************************************
+*/
+
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+
+/* Header Social media icons */
+#social-icons {
+    color: #fff;
+    text-align:center;
+    padding: 0.5em;
+    padding-left: 40px;
+    font-size: 1.2em;
+    background: linear-gradient(131deg, rgba(17,0,36,1) 0%, rgba(9,55,121,1) 42%, rgba(0,255,239,1) 100%);
+
+}
+
+#social-icons a {
+    color: #fff;
+    margin: 0 0.3em;
+}
+#social-icons a.contact{
+    padding-left: 15%;
+    align-items: right;
+    text-align:right;
+}
+
+
+
+/* Header for logo and Navbar */
+
+.header{
+    background: rgb(0,12,36);
+    background: linear-gradient(131deg, rgba(0,12,36,1) 27%, rgba(9,75,121,1) 51%, rgba(55,0,255,0.8688725490196079) 100%);
+    box-shadow: 1px 1px 5px 0px rgb(14, 53, 168);
+    position: sticky;
+    top: 0;
+    width: 100%;
+}
+.header a{
+    text-decoration: none;
+}
+.header ul{
+    list-style: none;
+}
+
+
+/* Logo */
+.logo{
+    display: inline-block;
+    color:white;
+    font-size: 60px;
+    margin-left: 75px;
+
+}
+
+.nav{
+    width: 100%;
+    height: 100%;
+    background-color:rgb(100, 12, 241);
+    overflow: hidden;
+
+}
+.menu a{
+    display: block;
+    padding: 20px 70px;
+    color:white;
+}
+.menu a:hover{
+    background-color:rgb(30, 6, 65);
+}
+.nav{
+    max-height: 0;
+    transition:max-height .5s ease-in-out;
+}
+
+
+/* Menu Icon */
+.hamb{
+cursor: pointer;
+float: right;
+padding: 30px 40px 0px 0px;
+
+}
+
+
+/* Hamber Line */
+
+.hamb-line {
+background:white;
+display: block;
+height: 2px;
+position: relative;
+width: 24px;
+
+} 
+
+
+/* Style span for navbar*/
+
+.hamb-line::before,
+.hamb-line::after{
+background:white;
+content: '';
+display: block;
+height: 100%;
+position: absolute;
+transition: all .2s ease-out;
+width: 100%;
+}
+.hamb-line::before{
+top: 5px;
+}
+.hamb-line::after{
+top: -5px;
+}
+
+.side-menu {
+display: none;
+}
+
+
+/* Toggle menu icon */
+.side-menu:checked ~ nav{
+max-height: 100%;
+}
+
+.side-menu:checked ~ .hamb .hamb-line {
+background: transparent;
+}
+.side-menu:checked ~ .hamb .hamb-line::before {
+transform: rotate(-45deg);
+top:0;
+}
+.side-menu:checked ~ .hamb .hamb-line::after {
+transform: rotate(45deg);
+top:0;
+}
+
+/* Responsiveness for navbar hamb */
+@media (min-width: 768px) {
+.nav{
+max-height: none;
+top: 0;
+position: relative;
+float: right;
+width: fit-content;
+background-color: transparent;
+}
+.menu li{
+float: left;
+}
+.menu a:hover{
+background-color: transparent;
+background: rgb(0,12,36);
+background: blue;
+}
+
+.hamb{
+display: none;
+
+}
+.logo{
+    margin-left: 70px;
+
+   }
+}
+
+
+/* Main Cover Div */
+
+.background-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("https://img.freepik.com/free-photo/happy-friends-looking-laptop-indoors_23-2148422311.jpg?size=626&ext=jpg&ga=GA1.1.632798143.1705622400&semt=ais");
+    background-size: cover;
+    background-position: center;
+    height: 400px; 
+}
+
+  .text-container {
+    text-align: center;
+    color: white; 
+    margin-bottom: 20px;
+ }
+
+ .text-container h4{
+    color: rgb(156, 156, 185);
+ }
+ .text-container h1{
+    color: rgb(109, 9, 240);
+    font-weight: 700;
+
+}
+
+ .text-container p{
+    font-size: medium;
+    text-align: justify;
+    padding: 20px 70px;
+    font-weight: 400;
+ }
+ .text-container button{
+    padding: 10px;
+    border-radius:15px ;
+    font-size: medium;
+    color: white;
+    cursor: pointer;
+    background: rgb(31,0,36);
+    background: linear-gradient(131deg, rgba(31,0,36,1) 27%, rgba(101,9,121,1) 58%, rgba(0,249,255,0.8688725490196079) 100%);
+ }
+ .text-container button:hover{
+    background: rgb(17,0,36);
+    background-color: blue;
+ }
+
+ /* Responsiveness */
+ @media (max-width: 768px){
+    .background-container{
+        height: 500px;
+    }
+ }
+
+
+
+
+
+ /* Section Items cards */
+ 
+ #section {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    background: linear-gradient(131deg, rgba(17,0,36,1) 0%, rgba(9,55,121,1) 42%, rgba(0,255,239,1) 100%);
+
+}
+
+#section h2{
+    padding: 10px;
+    font-weight:700;
+}
+#section p{
+    text-align: justify;
+    color: whitesmoke;
+    padding: 10px;
+}
+
+
+#section section {
+    flex: 1;
+    color: #fff;
+    text-align: center;
+    margin: 1em;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+
+
+/* About Us Section */
+
+#about{
+    width: auto;
+    background-image: url(https://pbs.twimg.com/ext_tw_video_thumb/1471176950416875522/pu/img/_FYPwpiUhgWc2VsM.jpg:large);
+
+}
+.section-info{
+    font-weight: bold;
+    text-align: center;
+  }
+  .section-info h1{
+    padding-top: 20px;
+    font-size:  40px;
+    font-family: sans-serif;
+  }
+  .section-info p{
+    font-size: 20px;
+  }
+  .about-row{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .about-left-col{
+    width: 250px;
+    margin-left: 10px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+  }
+  .about-left-col img{
+    width: 250px;
+    border-radius: 40%;
+    padding: 20px;
+    margin-left: 10px;
+  }
+  .about-right-col{
+    flex-basis: 70%;
+  }
+  .about-right-col span p{
+    padding: 20px;
+    text-align: justify;
+    font-family: sans-serif;
+  }
+  .about-right-col span h1{
+    text-align: center;
+    font-family: sans-serif;
+  }
+ 
+
+  /* Responsive for About us  */
+
+ @media screen and (max-width:560px){
+   .about-right-col{
+     flex-basis: 100%;
+   }
+   .about-right-col span p{
+     padding: 20px;
+     text-align: justify;
+     font-family: sans-serif;
+   }
+   .about-right-col span h1{
+     text-align: center;
+   }
+   .logo{
+    margin-left: 40px;
+
+}
+}
+
+
+/* Services Section */
+
+#services-section {
+    background-image: url("https://img.freepik.com/free-vector/worldwide-connection-gray-background-illustration-vector_53876-61772.jpg");
+    text-align: center;
+}
+
+#services-section h1{
+    padding-top: 20px;
+    font-size:  40px;
+    font-family: sans-serif;
+}
+
+.service-card {
+    display: inline-block;
+    width: 30%; 
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.service-image {
+    width: 200px;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    overflow-x:hidden;
+}
+
+/* Responsiveness */
+@media (max-width: 768px){
+    .service-card {
+        width: 40%; 
+    }
+ }
+@media (max-width: 639px){
+    .service-card {
+        width: 50%; 
+    }
+ }
+@media (max-width: 479px){
+    .service-card {
+        width: 60%; 
+    }
+ }
+
+
+
+
+/* Footer */
+footer{
+    text-align: center;
+    background-color: black;
+    color: #fff;
+}
+
